@@ -16,6 +16,20 @@ export default {
           800: '#991b1b',
           900: '#7f1d1d'
         },
+        primary: {
+          DEFAULT: '#3a2c21',
+          50: '#f5f3f1',
+          100: '#ebe6e2',
+          200: '#d6cec7',
+          300: '#b8aba0',
+          400: '#968374',
+          500: '#7a6556',
+          600: '#5e4c40',
+          700: '#483930',
+          800: '#3a2c21', // Base color
+          900: '#31251e',
+          950: '#1a130f',
+        },
         yellow: {
           50: '#fefce8',
           100: '#fef3c7',
@@ -30,8 +44,9 @@ export default {
         }
       },
       fontFamily: {
+        'sans': ['Inter', 'sans-serif'], // Default sans
         'inter': ['Inter', 'sans-serif'],
-        'noto': ['Noto Serif', 'serif']
+        'noto': ['Inter', 'sans-serif'] // Override serif to sans-serif
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

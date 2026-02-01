@@ -17,12 +17,12 @@ const Header: React.FC<HeaderProps> = ({ cartItemsCount, onCartClick, onMenuClic
   const { categories, loading: categoriesLoading } = useCategories();
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-red-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <button
             onClick={onMenuClick}
-            className="flex items-center space-x-2 text-black hover:text-red-600 transition-colors duration-200"
+            className="flex items-center space-x-2 text-black hover:text-primary transition-colors duration-200"
           >
             {loading ? (
               <div className="w-10 h-10 bg-gray-200 rounded-full animate-pulse" />
@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ cartItemsCount, onCartClick, onMenuClic
                 }}
               />
             )}
-            <h1 className="text-2xl font-noto font-semibold">
+            <h1 className="text-2xl font-semibold text-primary">
               {loading ? (
                 <div className="w-24 h-6 bg-gray-200 rounded animate-pulse" />
               ) : (
@@ -57,8 +57,8 @@ const Header: React.FC<HeaderProps> = ({ cartItemsCount, onCartClick, onMenuClic
                 <button
                   onClick={() => onCategoryClick?.('all')}
                   className={`transition-colors duration-200 whitespace-nowrap ${selectedCategory === 'all' || !selectedCategory
-                    ? 'text-red-600 font-medium'
-                    : 'text-gray-700 hover:text-red-600'
+                    ? 'text-primary font-medium'
+                    : 'text-gray-700 hover:text-primary'
                     }`}
                 >
                   All
@@ -68,8 +68,8 @@ const Header: React.FC<HeaderProps> = ({ cartItemsCount, onCartClick, onMenuClic
                     key={category.id}
                     onClick={() => onCategoryClick?.(category.id)}
                     className={`flex items-center space-x-1 transition-colors duration-200 whitespace-nowrap ${selectedCategory === category.id
-                      ? 'text-red-600 font-medium'
-                      : 'text-gray-700 hover:text-red-600'
+                      ? 'text-primary font-medium'
+                      : 'text-gray-700 hover:text-primary'
                       }`}
                   >
                     <span>{category.icon}</span>
@@ -81,20 +81,20 @@ const Header: React.FC<HeaderProps> = ({ cartItemsCount, onCartClick, onMenuClic
           </nav>
 
           <div className="flex items-center space-x-2">
-            <button
+            {/* <button
               onClick={onOrderTrackingClick}
               className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-lg transition-all duration-200 text-sm font-medium"
             >
               <Package className="h-5 w-5" />
               <span className="hidden sm:inline">Track Order</span>
-            </button>
+            </button> */}
             <button
               onClick={onCartClick}
-              className="relative p-2 text-gray-700 hover:text-black hover:bg-yellow-100 rounded-full transition-all duration-200"
+              className="relative p-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-full transition-all duration-200"
             >
               <ShoppingCart className="h-6 w-6" />
               {cartItemsCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-bounce-gentle">
+                <span className="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-bounce-gentle">
                   {cartItemsCount}
                 </span>
               )}
