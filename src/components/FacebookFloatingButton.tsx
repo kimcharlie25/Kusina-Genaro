@@ -4,7 +4,7 @@ import { Facebook } from 'lucide-react';
 const FacebookFloatingButton: React.FC = () => {
     return (
         <a
-            href="https://www.facebook.com/KusinaGenaro"
+            href="https://m.me/KusinaGenaro"
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-6 right-6 z-50 bg-[#1877F2] text-white p-4 rounded-full shadow-lg hover:bg-[#166fe5] transition-all duration-300 hover:scale-110 flex items-center justify-center group"
